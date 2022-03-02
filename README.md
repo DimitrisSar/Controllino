@@ -237,17 +237,19 @@ root@controllinohotspot:~# docker exec miner miner peer refresh /p2p/<peerid>
   <p align="center"><a href="https://docs.helium.com/mine-hnt/full-hotspots/become-a-maker/basic-miner-operation/" target="_blank">Basic Miner Operation</a>
   <p align="center"><a href="https://github.com/inigoflores/pisces-p100-tools/tree/main/Not_Found_Fix" target="_blank">Challenger Not Found Peerbook Size Increase Fix</a>
   <p align="center"><a href="https://github.com/inigoflores/helium-miner-log-analyzer" target="_blank">Helium Miner Logs Analyzer</a>
+  <p align="center"><a href="https://github.com/helium/miner/blob/master/config/sys.config" target="_blank">Default Helium Miner Config</a>
   </details><br>
 </table><hr><br><br>
 
-### <a name="software"></a>Notable Software on my Laptop:
+<p align="left"><strong><a name="software"></a>Notable Software on my Laptop:</strong><br>
+
 * [Debian 11](https://www.debian.org/download) - It all starts here.
 * [Docker](https://docker.com) - Docker
 * [XShell 7](https://www.netsarang.com/en/xshell/) - The industry’s most powerful SSH client
 
 <br>
 <br>
-### Todo List <a name="todo" href="https://github.com/DimitrisSar/Controllino#p2p"><img align="right" border="0" src="https://raw.githubusercontent.com/DimitrisSar/Controllino/main/www/images/up_arrow.png" width="22" ></a>
+<p align="left"><strong>Todo List <a name="todo" href="https://github.com/DimitrisSar/Controllino#p2p"><img align="right" border="0" src="https://raw.githubusercontent.com/DimitrisSar/Controllino/main/www/images/up_arrow.png" width="22" ></a></strong><br>
 
 The [issues section](https://github.com/DimitrisSar/Controllino/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) on github is where I store all my wishful ideas and future enhancements.
 Feel free to join the conversations there.<br><br>
