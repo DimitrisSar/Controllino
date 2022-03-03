@@ -97,7 +97,7 @@
 <tr><td colspan="4" align="left">
 <br>
 To open the Controllino v1 Chassis, follow the steps below:<p><br>
-<i>Step 1)</i> Unsrew the 4 top T15 Torx screws using the Torx screwdriver bit.  You may sheer off the bottom part of the top threaded pillar<p>
+<i>Step 1)</i> Unscrew the first 4 top T15 Torx screws using the Torx screwdriver bit.  You may sheer off the bottom part of the screw of the top threaded pillar.<p>
 <i>Step 2)</i> Open the top cover and remove IPX antenna connector and the LoRa mPCIe card.  Lift the power connector from its socket<p>
 <i>Step 3)</i> Gently remove the LoRa hat (lift slowly from both sides)<p>
 <i>Step 4)</i> Using the 5mm Hex Female bit, secure the M2.5 15mm Spacers and unscrew the bottom screws.  Do not use pliers to hold the spacers because they may slip and damage the rPi board<p>
