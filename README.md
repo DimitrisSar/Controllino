@@ -199,7 +199,7 @@ root@controllinohotspot:~# vi /home/pi/docker_config/docker.config
 <p>
 <i>Step 3)</i> Add the following 3 new options in the section <b>blockchain</b> of the config file:<p>
 
-```json
+```console
      {peerbook_update_interval, 180000},
      {max_inbound_connections, 50},
      {outbound_gossip_connections, 10}
@@ -220,13 +220,39 @@ Careful when adding these options to fix the commas on the existing ones otherwi
 root@controllinohotspot:~# docker restart miner
 ```
 <i>Step 5)</i> Check new Peer Book info:<p>
+
 ```console
 root@controllinohotspot:~# docker exec miner miner peer book -s
 root@controllinohotspot:~# docker exec miner miner peer book -c
 ```
-You can also refresh the peer with:<p>
+```code
+Options:
+  -s, --self
+    Display the peerbook entry for this node.
+  -c, --count
+    Display the count of all peerbook entries for this node.
+```
+You can also refresh the peer book entry and ping the peer with:<p>
 ```console
 root@controllinohotspot:~# docker exec miner miner peer refresh /p2p/<peerid>
+root@controllinohotspot:~# docker exec miner miner peer ping /p2p/<peerid>
+```
+
+`docker exec miner miner peer` commands:
+```code
+  peer listen            - Display the addresses this node is listening on.
+  peer session           - Display the nodes this node is connected to.
+  peer ping              - Ping the peer over an established or new session.
+  peer connect           - Connnect this node to another node.
+  peer disconnect        - Disconnect from a connected peer.
+  peer addr              - Display the p2p address of this node.
+  peer book              - Display information from the peerbook of this node.
+  peer gossip_peers      - Display gossip peers of this node.
+  peer refresh           - Request an updated peerbook for this peer from our gossip peers.
+  peer relay_reset       - Stop the current libp2p relay swarm and retry.
+  peer sync              - Connect to given peer and attempt to sync blocks.
+  peer fastforward       - Connect to given peer and attempt to deliver blocks rapidly.
+
 ```
 <br>
 <details>
