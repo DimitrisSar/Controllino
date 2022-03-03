@@ -260,8 +260,14 @@ root@controllinohotspot:~# apt update && apt upgrade
 <p>
 <i>Step 2)</i> Install Netdata, including all dependencies, disable telemetry, and get automatic stable updates<p>
 
-<pre><code>
-root@controllinohotspot:~# wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/netdata-kickstart.sh --stable-channel --disable-telemetry
+<style>
+  code {
+    white-space : pre-wrap !important;
+    word-break: break-word;
+  }
+</style>
+
+<pre><code>root@controllinohotspot:~# wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/netdata-kickstart.sh --stable-channel --disable-telemetry
 </pre></code>
 
 <p>
