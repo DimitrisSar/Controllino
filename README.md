@@ -207,30 +207,27 @@ root@controllinohotspot:~# vi /home/pi/docker_config/docker.config
 <p>
 Careful when adding these options to fix the commas on the existing ones otherwise the miner will not start.  Save the file and exit the editor.
 
-<b>Important Note:</b> The config file will be overwitten when the miner is upgraded to a new release.  You will have to redo the changes in `/home/pi/docker_config/docker.config` following the miner update.
+<b>Important Note:</b> The config file will be overwitten when the miner is upgraded to a new release or when you perform `Clear Miner Data` from the Controllino Dashboard.  You will have to redo the changes in `/home/pi/docker_config/docker.config` following the miner update/clear.
 
 <details>
 <summary>Complete docker.config file</summary>
   <p align="center"><img border="0" src="https://raw.githubusercontent.com/DimitrisSar/Controllino/main/www/images/docker_config.png">
 
 </details><br>
-
 <i>Step 4)</i> Restart miner<p>
+
 ```console
 root@controllinohotspot:~# docker restart miner
 ```
-
 <i>Step 5)</i> Check new Peer Book info:<p>
 ```console
 root@controllinohotspot:~# docker exec miner miner peer book -s
 root@controllinohotspot:~# docker exec miner miner peer book -c
 ```
-
 You can also refresh the peer with:<p>
 ```console
 root@controllinohotspot:~# docker exec miner miner peer refresh /p2p/<peerid>
 ```
-
 <br>
 <details>
   <summary>Useful Info</summary>
@@ -241,15 +238,90 @@ root@controllinohotspot:~# docker exec miner miner peer refresh /p2p/<peerid>
   </details><br>
 </table><hr><br><br>
 
+<table align="center" border="0">
+<tr ><td colspan="4">
+<p align="center"><strong>Real-time performance statistics</strong>
+<a name="stats" href="https://github.com/DimitrisSar/Controllino#p2p"><img align="right" border="0" src="https://raw.githubusercontent.com/DimitrisSar/Controllino/main/www/images/up_arrow.png" width="22"></a>
+</td></tr>
+
+<tr><td colspan="4" align="left">
+<br>
+<p>Using <a href="https://github.com/netdata/netdata">Netdata</a> monitoring agent, we will collect thousands of metrics from our Controllino v1 system (hardware, containers, and applications) with zero configuration.<p>
+
+Because it's free, open-source, and requires only 1% CPU utilization to collect thousands of metrics every second, Netdata is a superb single-node monitoring tool.<p><br>
+
+To install the netdata agent on your Controllino v1, follow the steps below:<p>
+<i>Step 1)</i> (optional) Update your Rasbpian packages to the latest versions<p>
+
+```console
+root@controllinohotspot:~# apt update && apt upgrade
+```
+
+<p>
+<i>Step 2)</i> Install Netdata, including all dependencies, disable telemetry, and get automatic stable updates<p>
+
+```console
+root@controllinohotspot:~# wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/netdata-kickstart.sh --stable-channel --disable-telemetry
+```
+
+<p>
+<i>Step 3)</i> Modify the netdata agent config file (<b>/etc/netdata/netdata.conf</b>) parameter <b>"bind to ="</b> (from 127.0.0.1 to 0.0.0.0) to allow remote connections:<p>
+
+```json
+[global]
+    run as user = netdata
+
+    # the default database size - 1 hour
+    history = 3600
+
+    # some defaults to run netdata with least priority
+    process scheduling policy = idle
+    OOM score = 1000
+
+[web]
+    web files owner = root
+    web files group = netdata
+
+    # by default do not expose the netdata port
+    bind to = 0.0.0.0
+```
+
+<i>Step 4)</i> Enable the netdata service for auto-startup<p>
+
+```console
+root@controllinohotspot:~# systemctl enable netdata
+```
+
+<i>Step 5)</i> Access the local netdata dashboard to see your node's real-time metrics by browsing to `http://NODE:19999`, replacing `NODE` with the `IP address` of your Controllino<p>
+
+  <p align="center"><img border="0" src="https://user-images.githubusercontent.com/1153921/80825153-abaec600-8b94-11ea-8b17-1b770a2abaa9.gif">
+
+<p>
+Enjoy the metrics!
+
+<b>Multiple Nodes:</b> You can use <a href="https://www.netdata.cloud/">Netdata Cloud</a> to have a single view of all your Controllinos running the netdata agent.  You can customize key metrics from any number of Controllino monitored nodes and seamlessly navigate to any node’s dashboard for granular performance troubleshooting.
+
+<br>
+<details>
+  <summary>Useful Info</summary>
+  <p align="center"><a href="https://learn.netdata.cloud/docs/agent/packaging/installer" target="_blank">Official Netdata Installation Guide</a>
+  <p align="center"><a href="https://learn.netdata.cloud/docs/configure/nodes" target="_blank">Official Netdata Configuration Guide</a>
+  <p align="center"><a href="https://learn.netdata.cloud/docs/cloud/visualize/dashboards" target="_blank">Build new dashboards</a>
+  <p align="center"><a href="https://github.com/netdata/netdata/blob/master/docs/monitor/configure-alarms.md" target="_blank">Configure health alarms</a>
+  <p align="center"><a href="https://github.com/netdata/netdata/blob/master/docs/export/external-databases.md" target="_blank">Export metrics to external time-series databases</a>
+  </details><br>
+</table><hr><br><br>
+
 <p align="left"><strong><a name="software"></a>Notable Software on my Laptop:</strong><br>
 
 * [Debian 11](https://www.debian.org/download) - It all starts here.
 * [Docker](https://docker.com) - Docker
 * [XShell 7](https://www.netsarang.com/en/xshell/) - The industry’s most powerful SSH client
+* [Netdata](https://github.com/netdata/netdata) - Infrastructure monitoring and troubleshooting
 
 <br>
 <br>
-<p align="left"><strong>Todo List <a name="todo" href="https://github.com/DimitrisSar/Controllino#p2p"><img align="right" border="0" src="https://raw.githubusercontent.com/DimitrisSar/Controllino/main/www/images/up_arrow.png" width="22" ></a></strong><br>
+<p align="left"><strong>Todo List <a name="todo" href="https://github.com/DimitrisSar/Controllino#stats"><img align="right" border="0" src="https://raw.githubusercontent.com/DimitrisSar/Controllino/main/www/images/up_arrow.png" width="22" ></a></strong><br>
 
 The [issues section](https://github.com/DimitrisSar/Controllino/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) on github is where I store all my wishful ideas and future enhancements.
 Feel free to join the conversations there.<br><br>
