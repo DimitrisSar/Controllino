@@ -404,7 +404,8 @@ Feel free to join the conversations there.<br><br>
 </p>
 
 <p align="center">
-<a target="_blank" href="https://www.buymeacoffee.com/DimitrisS"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px">You can buy me a coffee</span></a><a target="_blank" href="https://www.buymeacoffee.com/DimitrisS"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"></a>
+<a target="_blank" href="https://www.buymeacoffee.com/DimitrisS"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px">You can buy me a coffee</span></a><a target="_blank" href="https://www.buymeacoffee.com/DimitrisS"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"></a><br>
+<img src="https://raw.githubusercontent.com/DimitrisSar/Controllino/main/www/images/hnt_wallet.png" alt="Donate HNT"><br>or donate some HNT :)
 <br>
 <a name="bottom" href="https://github.com/DimitrisSar/Controllino#todo"><img align="right" border="0" src="https://raw.githubusercontent.com/DimitrisSar/Controllino/main/www/images/up_arrow.png" width="22" ></a><br>
 </p>
