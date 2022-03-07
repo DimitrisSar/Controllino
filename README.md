@@ -340,16 +340,54 @@ Enjoy the metrics!
   </details><br>
 </table><hr><br><br>
 
+<table align="center" border="0">
+<tr ><td colspan="4">
+<p align="center"><strong>Tips & Tricks</strong>
+<a name="tips" href="https://github.com/DimitrisSar/Controllino#stats"><img align="right" border="0" src="https://raw.githubusercontent.com/DimitrisSar/Controllino/main/www/images/up_arrow.png" width="22"></a>
+</td></tr>
+
+<td align="center"><a href="https://raw.githubusercontent.com/DimitrisSar/Controllino/main/www/images/Controllino_Dash.png" target="_blank">Controllino Dashboard v.1.2</a></td>
+<td align="center">Tip 2</td>
+<td align="center">Tip 3</td>
+<td align="center">Tip 4</a></td>
+
+<tr>
+<td align="center"><img border="0" src="https://raw.githubusercontent.com/DimitrisSar/Controllino/main/www/images/Controllino_Dash.png" width="300"></a></td>
+<td align="center"><img border="0" src="https://raw.githubusercontent.com/DimitrisSar/Controllino/main/www/images/more_to_come.jpg" width="200"></a></td>
+<td align="center"><a href="https://www.paragon-software.com/home/linuxfs-windows/" target="_blank"><img border="0" src="https://raw.githubusercontent.com/DimitrisSar/Controllino/main/www/images/more_to_come.jpg"  width="200" ></a></td>
+<td align="center"><img border="0" src="https://raw.githubusercontent.com/DimitrisSar/Controllino/main/www/images/more_to_come.jpg" width="200"></a></td>
+
+<tr><td colspan="4" align="left">
+<br>
+Comon Troubleshoting Steps / Notes / Tips
+<p><br>
+○ If miner height is stuck and not increasing:<br>1) Clear Miner Data + 2) Instasync Hotspot
+</p><br>
+
+○ Dashboard version cannot be updated manually.<p>If you have an older version, contact Controllino support @ https://hotspot.controllino.com/support/ and provide your hotspot name & MAC Address
+
+</p><br>
+○ The hotspot checks automatically every 10 minutes the following:</p>
+	1) Disk Usage: If it grows above 90%, it will perform both Clear Miner Data & Instasync operations<p>
+	2) LoRa Packet Forwarder: If service is not active, it will restart it and the miner
+
+</p><br>
+○ Check the Discord Server @ <a href="https://discord.gg/z8kxkgMn44">https://discord.gg/z8kxkgMn44</a> for more hints & tips and community support
+</p>
+<br>
+</table><hr><br><br>
+
+
 <p align="left"><strong><a name="software"></a>Notable Software on my Laptop:</strong><br>
 
-* [Debian 11](https://www.debian.org/download) - It all starts here.
+* [Debian 11](https://www.debian.org/download) - It all starts here
 * [Docker](https://docker.com) - Docker
 * [XShell 7](https://www.netsarang.com/en/xshell/) - The industry’s most powerful SSH client
 * [Netdata](https://github.com/netdata/netdata) - Infrastructure monitoring and troubleshooting
 
 <br>
 <br>
-<p align="left"><strong>Todo List <a name="todo" href="https://github.com/DimitrisSar/Controllino#stats"><img align="right" border="0" src="https://raw.githubusercontent.com/DimitrisSar/Controllino/main/www/images/up_arrow.png" width="22" ></a></strong><br>
+<p align="left"><strong>Todo List <a name="todo" href="https://github.com/DimitrisSar/Controllino#tips"><img align="right" border="0" src="https://raw.githubusercontent.com/DimitrisSar/Controllino/main/www/images/up_arrow.png" width="22" ></a></strong><br>
 
 The [issues section](https://github.com/DimitrisSar/Controllino/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) on github is where I store all my wishful ideas and future enhancements.
 Feel free to join the conversations there.<br><br>
