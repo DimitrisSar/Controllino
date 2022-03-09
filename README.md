@@ -163,6 +163,16 @@ To backup the contents of your SD Card, follow the steps below:<p><br>
 <p>Based on the work of: <a href="https://github.com/inigoflores">https://github.com/inigoflores/</a></p>
 <br>
 
+<i>"What is P2P and P2P peer book?"</i> Glad you asked!<p>
+
+P2P: Helium is using an extended version of the libP2P system which part of <a href="https://docs.ipfs.io/concepts/libp2p/">IPFS</a>.  It is used as a network layer by the peers to communicate with each other directly as equal participants.
+
+Peer Book: Think of it as a DNS server.  It is stored locally in a <a href="http://rocksdb.org/"> RocksDB</a> the combination of the peerid and ipv4 address with tcp port of the hotspots.  It has a limited size, so it can't hold all the addresses (620k+).<p>
+
+Notes:
+1) If the hotspot is relayed, it forms a "bridge" with another not relayed hotspot and you have a: p2p-circuit.  To reach the hotspot that is relayed, you need to communicate with its not relayed circuit peer.<p>
+2) There are 40 seed nodes deployed by Helium that act as the Global DNS Servers for the network.  If your hotspot cannot find the peerid in your local peerbook, it will query the seed nodes.  They are the first entities on the network that each node connects to in order to find out about the other nodes they could connect to and are an important glue for the network.
+
 P2P Communications are used for several purposes by the miner.  This will change when HIP55 will be fully implemented and the new light hotspots will emerge.
 
 Until then, you can try to increase the parameters for P2P comms to see if you get less warnings & errors of the following type:
