@@ -167,7 +167,7 @@ To backup the contents of your SD Card, follow the steps below:<p><br>
 
 <b>P2P</b>: Helium is using an <a href="https://github.com/helium/erlang-libp2p/">extended version</a> of the libP2P system which part of <a href="https://docs.ipfs.io/concepts/libp2p/">IPFS</a>.  It is used as a network layer by the peers to communicate with each other directly as equal participants.
 
-<b>Peer Book</b>: Think of it as a DNS server.  It is stored locally on your miner in a <a href="http://rocksdb.org/"> RocksDB</a> and holds the combination of the peerid and ipv4 address with tcp port of the hotspots.  It has a limited size, so it can't hold all the addresses (620k+).<p>
+<b>Peer Book</b>: Think of it as a DNS server.  It is stored locally on your miner in a <a href="http://rocksdb.org/"> RocksDB</a> and holds the combination of the peerid and ipv4 address with tcp port (default: 44158) of the hotspots.  It has a limited size, so it can't hold all the addresses (620k+).<p>
 
 Notes:
 1) If the hotspot is relayed, it forms a "bridge" with another not relayed hotspot and you have a: p2p-circuit.  To reach the hotspot that is relayed, you need to communicate with its not relayed circuit peer.<p>
