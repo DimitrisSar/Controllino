@@ -200,7 +200,7 @@ root@controllinohotspot:~# vi /home/pi/docker_config/docker.config
 <i>Step 3)</i> Add the following 3 new options in the section <b>blockchain</b> of the config file:<p>
 
 ```console
-     {peerbook_update_interval, 180000},
+     {peerbook_update_interval, 900000},
      {max_inbound_connections, 50},
      {outbound_gossip_connections, 10}
 ```
