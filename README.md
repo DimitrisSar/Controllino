@@ -67,6 +67,8 @@
 
 <tr><td colspan="4" align="left">
 |<-- Add some blah-blah about the Hardware -->|<br><br>
+FCC Approval for EMBLR1302: <a href="https://fccid.io/Z7HEMBLR1302">https://fccid.io/Z7HEMBLR1302</a>
+<br><br>
 
 <details>
   <summary>Possibly add links to some external content</summary>
